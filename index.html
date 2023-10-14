@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <button type="button" class="open_button">Create</button>
+    <div class="outer_box">
+        <div class="box">
+            <p class="title">Success</p>
+
+            <div class="content_box">
+                <div class="content">
+                    <span></span>
+                    <p>Registration Successful!</p>
+                </div>
+                <div class="button_box">
+                    <button type="button" class="close_button">Ok</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+<script>
+
+    let open_button = document.querySelector(".open_button");
+    let close_button = document.querySelector(".close_button");
+    let outer_box = document.querySelector(".outer_box");
+    let box = document.querySelector(".box");
+
+    open_button.onclick = function(){
+        box.classList.toggle("active");
+        outer_box.classList.toggle("outer_box_active");
+    }
+    close_button.onclick = function(){
+        box.classList.toggle("active");
+        outer_box.classList.toggle("outer_box_active");
+    }
+
+    outer_box.onclick = function(e){
+        if(!box.contains(e.target)){
+            box.classList.toggle("active");
+        outer_box.classList.toggle("outer_box_active");
+        }
+    }
+
+</script>
+</html>
